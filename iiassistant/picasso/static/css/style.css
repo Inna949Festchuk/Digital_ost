@@ -1,0 +1,228 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat";
+    overflow-x: hidden;
+}
+
+body {
+    background-color: #F6F7FC;
+}
+
+body::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+
+body::-webkit-scrollbar-thumb {
+    background: #E40422;
+    border-radius: 5px;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: #ddd;
+    border: 1px solid #ccc;
+}
+
+body::-webkit-scrollbar-button:hover {
+    background-color: #999999;
+}
+
+
+.App {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+button {
+    cursor: pointer;
+}
+
+.container {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 380px;
+    padding: 0 20px;
+}
+
+@media (min-width: 1920px) {
+    .container {
+        max-width: 1920px;
+    }
+}
+
+@media (min-width: 1220px) {
+    .container {
+        max-width: 1220px;
+    }
+}
+
+@media (max-width: 400px) {
+    .container {
+        max-width: 400px;
+    }
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+}
+
+.head {
+    height: 50px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.head p {
+    font-weight: 700;
+    font-size: 16px;
+    color: #E40422;
+}
+
+.chat {
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.block {
+    color: white;
+    font-size: 16px;
+    max-width: 80%;
+    width: fit-content;
+    margin-bottom: 25px;
+    padding: 20px;
+    border-radius: 20px 20px 0px 20px;
+    background-color: #676490;
+    align-self: flex-end;
+}
+
+.block2 {
+    width: fit-content;
+    font-size: 16px;
+    max-width: 80%;
+    margin-bottom: 25px;
+    padding: 20px;
+    border-radius: 20px 20px 20px 0px;
+    background-color: #ffffff;
+    color: black;
+}
+
+@media (min-width: 1920px) {
+    .head {
+        width: 100vw;
+    }
+
+    .block {
+        max-width: 90%;
+    }
+
+    .chat {
+        width: 90%;
+    }
+}
+
+@media (min-width: 1220px) {
+    .head {
+        width: 100vw;
+    }
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.menu div {
+    display: flex;
+    justify-content: space-around;
+    width: 200px;
+}
+
+.menu img {
+    position: relative;
+    bottom: 20px;
+    cursor: pointer;
+}
+
+.menu svg {
+    cursor: pointer;
+}
+
+@media (min-width: 1920px) {
+    .menu svg {
+        width: 45px;
+        height: 45px;
+    }
+
+    .menu div {
+        width: 300px;
+    }
+
+    .menu img {
+        width: 200px;
+    }
+}
+
+@media (min-width: 1220px) {
+    .menu svg {
+        width: 45px;
+        height: 45px;
+    }
+
+    .menu div {
+        width: 300px;
+    }
+
+    .menu img {
+        width: 200px;
+    }
+}
+
+@media (max-width: 500px) {
+    .menu {
+        max-width: 400px;
+    }
+}
+
+#recordBtn {
+    width: 120px; /* Определение ширины кнопки в процентах ширины экрана */
+    height: 120px; /* Определение высоты кнопки в процентах ширины экрана */
+    max-width: 120px; /* Максимальная ширина кнопки */
+    max-height: 120px; /* Максимальная высота кнопки */
+    min-width: 120px; /* Минимальная ширина кнопки */
+    min-height: 40px; /* Минимальная высота кнопки */
+    border-radius: 50%; /* Создание округлой формы кнопки */
+    font-size: 20px; /* Размер шрифта в процентах ширины экрана */
+    color: white; /* Цвет текста */
+    background-color: #555354; /* Цвет фона кнопки */
+    transition: 0.2s; /* Плавный переход при изменении состояния кнопки */
+    margin-bottom: 2vw; /* Отступ снизу в процентах ширины экрана */
+    border: none; /* Убрать границу у кнопки */
+}
+
+#recordBtn:hover {
+    background-color: #E40422;
+    border: 15px solid pink;
+}
+
+.block, .block2 {
+    display: none; /* Скрываем смски по умолчанию */
+}
+

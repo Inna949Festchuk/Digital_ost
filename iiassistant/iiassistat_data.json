@@ -1,0 +1,41 @@
+[
+
+  {
+    "model": "transcription.commands",
+    "pk": 4,
+    "fields": {
+      "commands": "Отправить",
+      "confirmation": "отправить перевод",
+      "slug": "otpravit"
+    }
+  },
+  {
+    "model": "transcription.commands",
+    "pk": 5,
+    "fields": {
+      "commands": "Нет",
+      "confirmation": "нет отменить",
+      "slug": "net"
+    }
+  },
+  {
+    "model": "transcription.commands",
+    "pk": 6,
+    "fields": {
+      "commands": "Да",
+      "confirmation": "да подтверждаю",
+      "slug": "da"
+    }
+  },
+  {
+    "model": "transcription.commands",
+    "pk": 7,
+    "fields": {
+      "commands": "Проверить",
+      "confirmation": "проверить баланс",
+      "slug": "proverit"
+    }
+  }
+  
+  ]
+  
