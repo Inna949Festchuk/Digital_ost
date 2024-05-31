@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="{% static 'logo.png' %}">
+    <!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+    <!-- Подключение js-библиотек онлайн/оффлайн https://antonshevchuk.gitbooks.io/jquery-for-beginners/content/10_go_on/ -->
+    <script type="text/javascript" src="{% static 'js\jquery-3.7.0.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css\style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap">
+    <title>Record Audio</title>
+</head>
+
+<body>
+    <div class="App">
+        <div class='container'>
+            <div class='main'>
+                <div class='head'>
+                    <p>МТС голос</p>
+                </div>
+                <div class='chat'>
+                    <div class="block" id="input_t"></div>
+                    <div class="block2" id="output_t"></div>
+                </div>
+
+                <div class='menu'>
+                    <div>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 6H21" stroke='#595959' stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M8 12H21" stroke='#595959' stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M8 18H21" stroke='#595959' stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M3 6H3.01" stroke='#595959' stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M3 12H3.01" stroke='#595959' stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M3 18H3.01" stroke='#595959' stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fillRule="evenodd" clipRule="evenodd"
+                                d="M15.1738 0.833358C13.8468 0.833344 12.9913 0.991435 12.0108 1.47141C11.6477 1.64911 11.3071 1.86312 10.9908 2.11279C10.6867 1.87712 10.3597 1.67294 10.0117 1.5008C9.01203 1.00639 8.11275 0.833344 6.83332 0.833344C3.40672 0.833344 0.916656 3.6725 0.916656 7.3599C0.916656 10.1446 2.46934 12.8346 5.36143 15.4357C6.87948 16.8011 8.8177 18.1522 10.2058 18.871L11 19.2823L11.7942 18.871C13.1823 18.1522 15.1205 16.8011 16.6386 15.4357C19.5306 12.8346 21.0833 10.1446 21.0833 7.3599C21.0833 3.71153 18.5698 0.847422 15.1738 0.833358ZM19.25 7.3599C19.25 9.54158 17.954 11.7869 15.4126 14.0726C14.027 15.3188 12.2457 16.5642 11 17.2176C9.75428 16.5642 7.97299 15.3188 6.58741 14.0726C4.04599 11.7869 2.74999 9.54158 2.74999 7.3599C2.74999 4.63542 4.47666 2.66668 6.83332 2.66668C7.85058 2.66668 8.47744 2.7873 9.19886 3.14412C9.625 3.35488 10.0016 3.63318 10.3276 3.98097L11.0021 4.70049L11.6705 3.97526C12.0038 3.61355 12.386 3.32891 12.8168 3.11807C13.517 2.7753 14.1047 2.66668 15.17 2.66668C17.4975 2.67633 19.25 4.67323 19.25 7.3599Z"
+                                fill="#595959" stroke="#595959" stroke-width="0.5" />
+                        </svg>
+                    </div>
+                    <button id="recordBtn">Запись</button>
+
+                    <!-- <button id="startRecordingBtn">Старт</button>
+                    <button id="stopRecordingBtn">Стоп</button> -->
+                    <div>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M21 11.5C21.0034 12.8199 20.6951 14.1219 20.1 15.3C19.3944 16.7117 18.3098 17.8992 16.9674 18.7293C15.6251 19.5594 14.0782 19.9994 12.5 20C11.1801 20.0034 9.87812 19.6951 8.7 19.1L3 21L4.9 15.3C4.30493 14.1219 3.99656 12.8199 4 11.5C4.00061 9.92176 4.44061 8.37485 5.27072 7.03255C6.10083 5.69025 7.28825 4.60557 8.7 3.9C9.87812 3.30493 11.1801 2.99656 12.5 3H13C15.0843 3.11499 17.053 3.99476 18.5291 5.47086C20.0052 6.94695 20.885 8.91565 21 11V11.5Z"
+                                stroke="#E40422" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21"
+                                stroke="#595959" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"
+                                stroke="#595959" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <script>
+        // JavaScript-код для обработки аудиофайла
+        // const audioElement = document.getElementById('audioElement');
+
+        // Функция получения CSRF-токена из куки
+        function getCookie(name) {
+            var cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = cookies[i].trim();
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+
+        // Получаем CSRF-токен из куки
+        var csrftoken = getCookie('csrftoken');
+
+        var isRecording = false;
+
+        document.getElementById('recordBtn').addEventListener('click', function () {
+            if (!isRecording) {
+                // Начало записи
+                navigator.getUserMedia({ audio: true }, function(stream) {
+                    gumStream = stream;
+                    rec = new MediaRecorder(stream);
+                    console.log("Recording started");
+                    rec.start();
+                    isRecording = true;
+                    document.getElementById('recordBtn').innerText = 'Стоп';
+                }, function(error) {
+                    console.error('getUserMedia error: ', error);
+                });
+            } else {
+                // Остановка записи
+                console.log("Recording stopped");
+                rec.stop();
+                gumStream.getAudioTracks()[0].stop();
+
+                rec.ondataavailable = function (e) {
+                    let formData = new FormData();
+                    formData.append('csrfmiddlewaretoken', getCookie('csrftoken'));
+
+                    // Создание Blob из полученных данных
+                    let audioBlob = new Blob([e.data], { type: 'audio/mp3' });
+                    formData.append('audio', audioBlob, 'recorded_audio.mp3');
+
+                    fetch("{% url 'createaudio' %}", {
+                        method: 'POST',
+                        headers: {
+                        'X-CSRFToken': csrftoken, // Добавляем CSRF-токен в заголовок запроса
+                        },
+                        body: formData,
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data['convert_text'] !== '') {
+                            document.getElementById('input_t').innerText = data['convert_text'];
+                            document.getElementById('input_t').style.display = 'block';
+                        }
+                        if (data['search_text'] !== '') {
+                            document.getElementById('output_t').innerText = data['search_text'];
+                            document.getElementById('output_t').style.display = 'block';
+                        }
+                        
+                        // Fetch для проигрывания аудио
+                        fetch('https://endless-presently-basilisk.ngrok-free.app/perform_tts/', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({
+                                text: data['search_text'],
+                                speaker: 'xenia',
+                                sample_rate: 48000,
+                            }),
+                        })
+                        .then((response) => response.blob())
+                        .then((blob) => {
+                            const audioUrl = URL.createObjectURL(blob);
+                            const audio = new Audio(audioUrl);
+                            audio.play();
+                        })
+                        .catch((error) => {
+                            console.error('There has been a problem with your fetch operation:', error);
+                        });
+
+                        console.log('input:', data['convert_text'], 'output:', data['search_text']);
+                    })
+                    .catch(error => {
+                        console.error('Error sending the audio to the server');
+                    });
+
+                    isRecording = false;
+                    document.getElementById('recordBtn').innerText = 'Запись';
+                };
+            }
+        });
+    </script>
+</body>
+</html>
