@@ -27,14 +27,14 @@ SECRET_KEY = 'django-insecure-64&9d##dfbc6_zt(w$_gd0#%bsb6g1q6iuj*t4=@e&ne4=2&uz
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-# DEBUG = os.getenv('DEBUG')
+# DEBUG = True
+DEBUG = os.getenv('DEBUG')
 
 ALLOWED_HOSTS =  []
 # ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(',')
-# ALLOWED_HOSTS = [
-#         '95.163.234.106',
-# ]
+ALLOWED_HOSTS = [
+        '95.163.234.106',
+]
 
 # Application definition
 
@@ -116,16 +116,16 @@ WSGI_APPLICATION = 'iiassistant.wsgi.application'
 # Username: admin
 # Password: admin
 
-DATABASES = {
-'default': {
-    'ENGINE': 'django.db.backends.postgresql',
-    'NAME': 'admin',
-    'USER': 'admin',
-    'PASSWORD': 'admin',
-    'HOST': 'localhost',
-    'PORT': '5432',
-    }
-}
+# DATABASES = {
+# 'default': {
+#     'ENGINE': 'django.db.backends.postgresql',
+#     'NAME': 'admin',
+#     'USER': 'admin',
+#     'PASSWORD': 'admin',
+#     'HOST': 'localhost',
+#     'PORT': '5432',
+#     }
+# }
 
 # DATABASES = {
 #     'default': {
@@ -138,16 +138,16 @@ DATABASES = {
 #     }
 # }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': os.getenv('DB_NAME'),
-#         'HOST': os.getenv('DB_HOST'),
-#         # 'PORT': os.getenv('DB_PORT'),
-#         'USER': os.getenv('DB_USER'),
-#         'PASSWORD': os.getenv('DB_PASSWORD')
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv('DB_NAME'),
+        'HOST': os.getenv('DB_HOST'),
+        # 'PORT': os.getenv('DB_PORT'),
+        'USER': os.getenv('DB_USER'),
+        'PASSWORD': os.getenv('DB_PASSWORD')
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -192,6 +192,7 @@ STATICFILES_DIRS = [
 ]
 
 # STATIC_ROOT = os.path.join(BASE_DIR, 'transcription/static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'picasso/static')
 
 # Указание MEDIA_URL для доступа к медиа-файлам через URL
 MEDIA_URL = '/media/'
@@ -219,6 +220,6 @@ CORS_ALLOW_HEADERS = (
 )
 
 CORS_ALLOWED_ORIGINS = [
-    "http://127.0.0.1:8000",
-    # "http://95.163.234.106:8000",
+    # "http://127.0.0.1:8000",
+    "http://95.163.234.106",
 ]
