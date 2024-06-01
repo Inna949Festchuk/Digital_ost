@@ -239,7 +239,7 @@ def get_token(user_auth):
 
     response = requests.request("POST", url, headers=headers, data=payload)
     token = response.json()["access_token"]
-    # print(token)
+    print(token)
     return token
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
