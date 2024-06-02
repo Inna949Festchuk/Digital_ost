@@ -1,0 +1,130 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalContent {
+    width: fit-content;
+    min-height: 600px;
+    height: fit-content;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10px 10px 10px 15px;
+    border-radius: 10px;
+}
+
+.modalBody {
+    display: flex;
+    justify-content: space-around;
+}
+
+.modalContent img {
+    width: 520px;
+    height: 500px;
+}
+
+.closeButton {
+    margin-top: 16px;
+}
+
+.icons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 200px;
+}
+
+.icons button {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.artic {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 500px;
+    padding: 5px 0;
+}
+
+.close {
+    cursor: pointer;
+}
+
+.dwnld {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #333333;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 10px;
+    width: 130px;
+    height: 32px;
+    transition: 0.3s;
+}
+
+.dwnld:hover {
+    background-color: #161616;
+}
+
+.helps {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dropdown {
+    width: 361px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    right: 70px;
+    bottom: 155px;
+}
+
+.dropdownButton {
+    background: white;
+    border: 1px solid #909090;
+    cursor: pointer;
+    width: 340px;
+    height: 50.5px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    align-items: center;
+    border-radius: 10px;
+    margin-right: 48px;
+}
+
+
+.dropdownItem {
+    padding: 10px;
+    background-color: white;
+    cursor: pointer;
+    height: 51px;
+    border-bottom: 1px solid black;
+    width: 355px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+.selectedValue {
+    margin-top: 10px;
+    color: white;
+}
