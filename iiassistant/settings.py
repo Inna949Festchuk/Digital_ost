@@ -225,3 +225,10 @@ CORS_ALLOWED_ORIGINS = [
 ]
 
 # SHA256:D3LFYmfoQHBJl6M2BEuZyzIy/gggHTb9jKslWjBqJjc
+
+
+# https://ru.stackoverflow.com/questions/1412894/%d0%9a%d0%b0%d0%ba-%d0%bf%d0%be%d1%81%d0%bb%d0%b0%d1%82%d1%8c-post-%d0%b7%d0%b0%d0%bf%d1%80%d0%be%d1%81-%d1%81-csrf-%d1%82%d0%be%d0%ba%d0%b5%d0%bd%d0%be%d0%bc
+# Если вы используете Django ≥ 4, то теперь необходимо указывать CSRF_TRUSTED_ORIGINS в settings.py:
+# CSRF_TRUSTED_ORIGINS = ['https://your-domain.com', 'https://www.your-domain.com']
+
+CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:8000', 'ttp://95.163.234.106']
