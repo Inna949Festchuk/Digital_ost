@@ -231,4 +231,4 @@ CORS_ALLOWED_ORIGINS = [
 # Если вы используете Django ≥ 4, то теперь необходимо указывать CSRF_TRUSTED_ORIGINS в settings.py:
 # CSRF_TRUSTED_ORIGINS = ['https://your-domain.com', 'https://www.your-domain.com']
 
-CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:8000', 'ttp://95.163.234.106']
+CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:8000', 'http://95.163.234.106']
