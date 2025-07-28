@@ -20,10 +20,10 @@ from pydub import AudioSegment
 # Установка сертификатов минцифры
 # https://developers.sber.ru/docs/ru/gigachat/sdk/get-started/quickstart#ustanovka-sertifikatov-mintsifry
 
-client_id = '0987f8e1-23f0-4dca-b9d9-fea9cf05af7c'
-secret = '726900f1-64b6-4fb9-afdd-8a6a4d960447'
+client_id = ''
+secret = ''
 # Данные авторизации пользователя
-auth = 'MDk4N2Y4ZTEtMjNmMC00ZGNhLWI5ZDktZmVhOWNmMDVhZjdjOjcyNjkwMGYxLTY0YjYtNGZiOS1hZmRkLThhNmE0ZDk2MDQ0Nw=='
+auth = ''
 
 import requests
 import uuid # Библиотека для генерации RqUID
